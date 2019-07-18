@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Web Crawler</title>
+      
+
+  </head>
+<body>
+    
+
+    
+<center><h1>Web Crawler: Sears Tears</h1>
+
+<form> <p>Upload your csv file here</p>
+    <input type="text" placeholder="yourcsv.csv"/>
+   <input id="file-input" type="button" name="name" value="Upload Csv" /></form>
+    
+    
+   
+
+</center>
+
+
+
+  </body>
+
+  <script>  
+    const {dialog} = require("electron").remote;
+    document.getElementById("file-input").addEventListener("click",() =>{    
+    try{dialog.showOpenDialog(function (fileNames) {
+                            if(fileNames === undefined){
+                        alert("No file selected");
+                        
+                                return;
+                    }
+                }); }
+ 
+    
+  catch(err) {
+ alert("An error occured when trying to open up your file , please try again or use a different file.");
+      return;
+}
+    
+    
+},false ); </script>  
+</html>
